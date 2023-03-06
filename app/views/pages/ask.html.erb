@@ -1,0 +1,17 @@
+<h1>What do you want?!</h1>
+
+<h2>Possible questions include:</h2>
+<ul>
+  <% @possible_questions.each do |question| %>
+    <li><%=question %></li>
+  <% end %>
+</ul>
+
+
+<%# action = where form is sent to. name = key of corresponding parameter %>
+<form action="/answer" data-turbo="false">
+  <input type="text"
+    name="user-question"
+    placeholder="Say it with your chest">
+  <input type="submit" value="Ask!">
+</form>
